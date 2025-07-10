@@ -1,0 +1,228 @@
+/*
+    أ) للخلفيات:
+    @surface_container → خلفية العناصر الرئيسية.
+    @primary_container → خلفية العناصر المميزة (مثل الأزرار).
+    @error_container → خلفية التنبيهات الحمراء.
+
+    ب) للنصوص:
+    @on_surface → لون النص الأساسي على الخلفية.
+    @on_primary_container → لون النص على @primary_container.
+    @on_error_container → لون النص على الأحمر.
+
+    ج) للعناصر التفاعلية:
+    @primary → لون العناصر الرئيسية.
+    @inverse_primary → نسخة معكوسة من @primary.
+*/
+
+@import "waybar-colors.css";
+
+/* === Global Defaults === */
+* {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 1px;
+    border-radius: 0px;
+    min-height: 0;
+    font-family: "JetBrains Mono", "Iosevka Nerd Font", monospace;
+    font-size: 15px;
+    transition:
+        margin 0.6s ease,
+        border-radius 0.5s ease;
+}
+
+/* Waybar Window */
+window#waybar {
+    background-color: @surface;
+    color: @on_surface;
+}
+
+/* Shared Style */
+#workspaces button,
+#cpu,
+#memory,
+#temperature,
+#pulseaudio,
+#privacy,
+#custom-camera,
+#tray,
+#battery,
+#backlight,
+#power-profiles-daemon,
+#clock,
+#custom-power,
+#custom-launcher,
+#hyprland-window,
+#idle_inhibitor {
+    padding: 0 5px;
+    margin: 1px 2px;
+    border-radius: 20px;
+}
+
+/* Hover Effects */
+#workspaces button:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#pulseaudio:hover,
+#privacy:hover,
+#battery:hover,
+#clock:hover,
+#custom-launcher:hover,
+#hyprland-window:hover,
+#idle_inhibitor:hover {
+    margin: 0px 10px;
+    border-radius: 0px;
+    background: @surface_container_highest;
+    color: @on_surface;
+}
+
+#custom-power:hover {
+    border-radius: 0px;
+    background: @error;
+    color: @on_error;
+}
+
+/* Battery Icon */
+#battery.icon {
+    background: @surface_container_highest;
+    color: @on_surface_variant;
+}
+
+/* Workspaces */
+#workspaces button {
+    color: @on_surface;
+    border-radius: 15px;
+}
+
+#workspaces button.active {
+    color: @on_primary;
+    background: @primary_fixed_dim;
+    border-radius: 0px;
+}
+
+#workspaces button.urgent {
+    background-color: @error;
+}
+
+/* Mode Indicator */
+#mode {
+    background-color: @surface_variant;
+    box-shadow: inset 0 -3px @on_surface;
+}
+
+/* Custom Power Button */
+#custom-power {
+    background: @tertiary_container;
+    color: @on_tertiary_container;
+    margin: 0px 5px;
+    padding: 0px 5px;
+    font-size: 25px;
+}
+
+/* === Animations === */
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: @on_error;
+}
+#battery.critical:not(.charging) {
+    background-color: @error;
+    color: @on_error;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.charging {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+/* Power Profiles */
+#power-profiles-daemon {
+    padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+    background-color: @error;
+    color: @on_error;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: @tertiary;
+    color: @on_tertiary;
+}
+
+/* Privacy Items */
+#privacy-item.screenshare,
+#custom-camera.active {
+    background-color: @error;
+    color: @on_error;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#privacy-item.audio-in {
+    background-color: @tertiary_container;
+    color: @on_tertiary_container;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Temperature Critical */
+#temperature.critical {
+    background-color: @error;
+}
+
+/* Tray */
+#tray {
+    background-color: @primary_container;
+    border: 2px solid @on_primary;
+    border-radius: 10px;
+}
+
+# #tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @error;
+}
+
+/* Idle Inhibitor */
+#idle_inhibitor.activated {
+    background-color: @surface_container_highest;
+    color: @on_surface;
+}
+
+/* Camera Icon */
+#custom-camera {
+    font-size: 18px;
+}
+
+/* Tooltip Style */
+tooltip {
+    background: @surface;
+    border: 2px solid @tertiary;
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: @on_surface;
+    padding: 6px;
+}

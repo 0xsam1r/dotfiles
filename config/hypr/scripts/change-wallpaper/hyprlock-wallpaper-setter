@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+WALL="$1"
+LOCK_DEST="$HOME/.config/hypr/assets/hyprlock.png"
+
+if [[ ! -f "$WALL" ]]; then
+    notify-send "Convert wallpaper (Error)" "Wallpaper not found at: $WALL ❌"
+    exit 1
+fi
+
+MIME_TYPE=$(file --mime-type -b "$WALL")
+echo "Convert wallpaper" "📎 Mime type: $MIME_TYPE"
+
+if [[ "$MIME_TYPE" == "image/gif" || "$MIME_TYPE" == "image/webp" ]]; then
+    
+    magick "$WALL[0]" "$LOCK_DEST"
+    notify-send "Convert wallpaper" "🌀 Converting animated wallpaper to PNG"
+    exit 0
+else
+    
+    magick "$WALL" "$LOCK_DEST" # tranform photo to png
+    notify-send "Convert wallpaper" "📷 Copying static wallpaper to PNG"
+    exit 0
+fi
+
+notify-send "Convert wallpaper Error" "can't Converting wallpaper to PNG"
