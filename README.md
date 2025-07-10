@@ -118,4 +118,5 @@ This repo is an evolving workspace. I’m always experimenting — breaking thin
 If you're diving into Linux customization, tiling WMs, or secure scripting, feel free to explore or fork!
 
 # Comming soon.... ان شاء الله
-### [ ] use quick-shell
+### [ ] quick-shell
+### [ ] output colors in cash and import them 
