@@ -119,4 +119,4 @@ If you're diving into Linux customization, tiling WMs, or secure scripting, feel
 
 # Comming soon.... ان شاء الله
 ### [ ] quick-shell
-### [ ] output colors in cash and import them 
+### [ ] output colors in cashe and import them 
