@@ -91,7 +91,7 @@ cd ~/dotfiles
 feel free to copy files manual or delete old configrations and run stow-dotfiles command
 don't forget 
 ``` bash
-chmod +x stow-🎨dotfiles
+chmod +x stow-dotfiles
 ```
 
 
