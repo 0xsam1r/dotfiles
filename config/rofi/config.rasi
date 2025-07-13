@@ -6,7 +6,7 @@
 //
 ///////////////////////////////////////////////////////////////////
 
-@import "~/.config/rofi/colors.rasi"
+@import "~/.cache/wallpaper-theme/rofi-colors.rasi"
 
 * {
     font: "JetBrainsMono Nerd Font 13";

@@ -14,7 +14,7 @@
     @inverse_primary → نسخة معكوسة من @primary.
 */
 
-@import "waybar-colors.css";
+@import '../../.cache/wallpaper-theme/colors.css';
 
 /* === Global Defaults === */
 * {
