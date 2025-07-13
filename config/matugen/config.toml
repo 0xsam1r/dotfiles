@@ -51,7 +51,7 @@ output_path = '~/.cache/wallpaper-theme/qtct-colors.conf'
 # pywalfox
 [templates.pywalfox]
 input_path = "~/.config/matugen/templates/pywalfox-colors.json"
-output_path = "~/.cache/wallpaper-theme/colors.json"
+output_path = "~/.cache/wal/colors.json"
 post_hook = "pywalfox update"
 
 # Zathura pdf viewer
