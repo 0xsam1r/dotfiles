@@ -11,7 +11,7 @@
 # kitty
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
-output_path = '~/.cache/wallpaper-theme/kitty-colors-base.conf'
+output_path = '~/.cache/wallpaper-theme/kitty-colors.conf'
 post_hook = "kill -SIGUSR1 $(pidof kitty)"  # thanks to issues in githup
 
 # Rofi
