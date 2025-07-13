@@ -15,7 +15,6 @@ set_wallpaper() {
 
     matugen image "$IMG" # good types -> scheme-fruit-salad, scheme-tonal-spot
 
-    wal -i $IMG -e -n -s -t
 
     notify-send --icon "$IMG" " Wallpaper Changed 🎨" "Applied: $(basename "$IMG")"
     #======================================
