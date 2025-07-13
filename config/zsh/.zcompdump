@@ -1,4 +1,4 @@
-#files: 1176	version: 5.9
+#files: 1177	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -230,6 +230,7 @@ _comps=(
 'cal' '_cal'
 'calendar' '_calendar'
 'cap' '_cap'
+'cargo' '_cargo'
 'cask' '_cask'
 'cat' '_cat'
 'catchsegv' '_precommand'
@@ -285,7 +286,6 @@ _comps=(
 'cmp' '_cmp'
 'co' '_rcs'
 'code' '_code'
-'code-oss' '_code-oss'
 'codium' '_codium'
 'coffee' '_coffee'
 'column' '_column'
@@ -1300,6 +1300,7 @@ _comps=(
 'run0' '_run0'
 'rup' '_hosts'
 'rusage' '_precommand'
+'rustup' '_rustup'
 'rview' '_vim'
 'rvim' '_vim'
 'rwho' '_hosts'
@@ -1921,16 +1922,16 @@ autoload -Uz _afew _age _android _archlinux-java _artisan \
             _uuidgen _virtualbox _vnstat _wemux _wg-quick \
             _xsel _yarn _yfm _zcash-cli _zinit \
             _bat _bluetoothctl _bootctl _busctl _bwrap \
-            _chafa _checkupdates _code _code-oss _codium \
-            _coredumpctl _curl _dolphin _dunst _dunstctl \
-            _eza _fastfetch _foot _footclient _hostnamectl \
-            _hyprctl _hyprpm _img2sixel _insmod _journalctl \
-            _kde-inhibit _kernel-install _kitty _lf _libinput \
-            _localectl _loginctl _lsmod _machinectl _mkinitcpio \
-            _networkctl _oomctl _paccache _pacdiff _paclist \
-            _paclog-pkglist _pacman _pacscripts _pacsearch _pacsort \
-            _pactree _parallel _playerctl _powerprofilesctl _pulseaudio \
-            _rankmirrors _resolvectl _rg _rmmod _run0 \
+            _cargo _chafa _checkupdates _codium _coredumpctl \
+            _curl _dolphin _dunst _dunstctl _eza \
+            _fastfetch _foot _footclient _hostnamectl _hyprctl \
+            _hyprpm _img2sixel _insmod _journalctl _kde-inhibit \
+            _kernel-install _kitty _lf _libinput _localectl \
+            _loginctl _lsmod _machinectl _mkinitcpio _networkctl \
+            _oomctl _paccache _pacdiff _paclist _paclog-pkglist \
+            _pacman _pacscripts _pacsearch _pacsort _pactree \
+            _parallel _playerctl _powerprofilesctl _pulseaudio _rankmirrors \
+            _resolvectl _rg _rmmod _run0 _rustup \
             _sd_hosts_or_user_at_host _sd_machines _sd_outputmodes _sd_unit_files _sensors \
             _sensors-detect _starship _swayimg _swaync _swaync-client \
             _swww _systemctl _systemd _systemd-analyze _systemd-delta \
