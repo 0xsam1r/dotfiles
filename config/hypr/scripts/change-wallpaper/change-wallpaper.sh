@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 WALL_DIR="$HOME/Pictures/wallpapers"                  
-
 set_wallpaper() {
     local IMG="$1"
 
@@ -14,9 +13,11 @@ set_wallpaper() {
         --transition-step 90 \
         --transition-fps 60
 
-    matugen image "$IMG" --show-colors -t scheme-fruit-salad # good types -> scheme-fruit-salad, scheme-tonal-spot
+    matugen image "$IMG" # good types -> scheme-fruit-salad, scheme-tonal-spot
 
-    notify-send --icon "$HOME/.config/hypr/assets/hyprlock.png" " Wallpaper Changed 🎨" "Applied: $(basename "$IMG")"
+    wal -i $IMG -e -n -s -t
+
+    notify-send --icon "$IMG" " Wallpaper Changed 🎨" "Applied: $(basename "$IMG")"
     #======================================
 
     #=======================================

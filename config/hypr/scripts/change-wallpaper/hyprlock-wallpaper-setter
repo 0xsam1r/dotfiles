@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 WALL="$1"
-LOCK_DEST="$HOME/.config/hypr/assets/hyprlock.png"
+LOCK_DEST="$HOME/.cache/wallpaper-theme/hyprlock.png"
 
 if [[ ! -f "$WALL" ]]; then
     notify-send "Convert wallpaper (Error)" "Wallpaper not found at: $WALL ❌"

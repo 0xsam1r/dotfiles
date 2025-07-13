@@ -5,107 +5,58 @@
 
 # Global Configs
 [config]
-version_check = true
-mode = "auto"
 
 # Templates
 
 # kitty
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
-output_path = '~/.config/kitty/matugen-colors.conf'
+output_path = '~/.cache/wallpaper-theme/kitty-colors-base.conf'
 post_hook = "kill -SIGUSR1 $(pidof kitty)"  # thanks to issues in githup
 
-
-
-#[X] Rofi
+# Rofi
 [templates.rofi]
 input_path = '~/.config/matugen/templates/rofi-colors.rasi'
-output_path = '~/.config/rofi/colors.rasi'
+output_path = '~/.cache/wallpaper-theme/rofi-colors.rasi'
 
-#[X] Hyprland
+# Hyprland
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland-colors.conf'
-output_path = '~/.config/hypr/colors/hyprland-colors.conf'
+output_path = '~/.cache/wallpaper-theme/hyprland-colors.conf'
 post_hook = 'hyprctl reload'
 
-#[X] Hyprlock
+# Hyprlock
 [templates.hyprlock]
 input_path = '~/.config/matugen/templates/hyprlock-colors.conf'
-output_path = '~/.config/hypr/colors/hyprlock-colors.conf'
+output_path = '~/.cache/wallpaper-theme/hyprlock-colors.conf'
 
 
-#[X] Waybar
-[templates.waybar]
+# CSS colors for waybar and swaync and wlogout
+[templates.css]
 input_path = '~/.config/matugen/templates/colors.css'
-output_path = '~/.config/waybar/waybar-colors.css'
-post_hook = 'pkill -SIGUSR2 waybar && nm-applet --indicator &'
-
-# Swaync
-[templates.swaync]
-input_path = '~/.config/matugen/templates/colors.css'
-output_path = '~/.config/swaync/colors.css'
-post_hook = 'swaync-client -rs'
+output_path = '~/.cache/wallpaper-theme/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar && swaync-client -rs'
 
 
-# Gtk3
-[templates.gtk3]
+# GTK 3, 4
+[templates.gtk]
 input_path = '~/.config/matugen/templates/gtk-colors.css'
-output_path = '~/.config/gtk-3.0/colors.css'
+output_path = '~/.cache/wallpaper-theme/gtk-colors.css'
 
-# GTk4
-[templates.gtk4]
-input_path = '~/.config/matugen/templates/gtk-colors.css'
-output_path = '~/.config/gtk-4.0/colors.css'
-
-# Qt5
-[templates.qt5ct]
+# QT 5, 6 
+[templates.qtct]
 input_path = '~/.config/matugen/templates/qtct-colors.conf'
-output_path = '~/.config/qt5ct/matugen.conf'
+output_path = '~/.cache/wallpaper-theme/qtct-colors.conf'
 
-# Qt6
-[templates.qt6ct]
-input_path = '~/.config/matugen/templates/qtct-colors.conf'
-output_path = '~/.config/qt6ct/matugen.conf'
+# pywalfox
+[templates.pywalfox]
+input_path = "~/.config/matugen/templates/pywalfox-colors.json"
+output_path = "~/.cache/wallpaper-theme/colors.json"
+post_hook = "pywalfox update"
 
-[templates.wlogout]
-input_path = '~/.config/matugen/templates/colors.css'
-output_path = '~/.config/wlogout/colors.css'
-
-
-# Kvantum
-#[templates.kvantum]
-#input_path = '~/.config/matugen/templates/matugen.kvconfig'
-#output_path = '~/.config/Kvantum/matugen/matugen.kvconfig'
-
-# Cava
-#[templates.cava]
-#input_path = '~/.config/matugen/templates/matugen-cava'
-#output_path = '~/.config/cava/config'
-
-# Neovim & Nvchad
-#[templates.neovim-nvchad]
-#input_path = '~/.config/matugen/templates/matugen-nvchad.lua'
-#output_path = '~/.cache/wal/base46-dark.lua'
-
-#[templates.neovim-nvchad-colors]
-#input_path = '~/.config/matugen/templates/matugen-nvchad-colors'
-#output_path = '~/.cache/wal/colors'
-
-# Pywalfox
-#[templates.pywalfox]
-#input_path = '~/.config/matugen/templates/pywalfox-colors.json'
-#output_path = '~/.cache/wal/colors.json'
-#post_hook = 'pywalfox update'
-
-# Librewolf startup page
-#[templates.librewolf]
-#input_path = '~/.config/matugen/templates/matugen-librewolf-startup-page.css'
-#output_path = '~/.local/share/startup-page/app.css'
-
-# Zathura
-#[templates.zathura]
-#input_path = '~/.config/matugen/templates/matugen-zathurarc'
-#output_path = '~/.config/zathura/matugen-zathurarc'
+# Zathura pdf viewer
+[templates.zathura]
+input_path = '~/.config/matugen/templates/matugen-zathurarc'
+output_path = '~/.cache/wallpaper-theme/matugen-zathurarc'
 
 
