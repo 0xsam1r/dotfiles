@@ -1,43 +1,41 @@
 /*
-    أ) للخلفيات:
-    @surface_container → خلفية العناصر الرئيسية.
-    @primary_container → خلفية العناصر المميزة (مثل الأزرار).
-    @error_container → خلفية التنبيهات الحمراء.
+ _       __               ____              
+| |     / /____ _ __  __ / __ ) ____ _ _____
+| | /| / // __ `// / / // __  |/ __ `// ___/
+| |/ |/ // /_/ // /_/ // /_/ // /_/ // /    
+|__/|__/ \__,_/ \__, //_____/ \__,_//_/     
+               /____/                       
+---------------------------------------------------------------
+Written by Samir Ahmed
 
-    ب) للنصوص:
-    @on_surface → لون النص الأساسي على الخلفية.
-    @on_primary_container → لون النص على @primary_container.
-    @on_error_container → لون النص على الأحمر.
-
-    ج) للعناصر التفاعلية:
-    @primary → لون العناصر الرئيسية.
-    @inverse_primary → نسخة معكوسة من @primary.
+Repository Link: https://github.com/samir176520/dotfiles
+---------------------------------------------------------------               
 */
 
 @import '../../.cache/wallpaper-theme/colors.css';
 
-/* === Global Defaults === */
-* {
-    margin: 0;
-    padding: 0;
-    padding-bottom: 1px;
-    border-radius: 0px;
-    min-height: 0;
-    font-family: "JetBrains Mono", "Iosevka Nerd Font", monospace;
-    font-size: 15px;
-    transition:
-        margin 0.6s ease,
-        border-radius 0.5s ease;
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
-/* Waybar Window */
+/* === Global Defaults === */
+* {
+
+    font-family: "Iosevka Nerd Font", "monospace";
+    font-size: 15px;
+}
+
+/* =========== Waybar Window ============== */
 window#waybar {
     background-color: @surface;
     color: @on_surface;
 }
 
-/* Shared Style */
+/* ================= Shared Style ========= */
 #workspaces button,
+#privacy-item,
 #cpu,
 #memory,
 #temperature,
@@ -68,12 +66,15 @@ window#waybar {
 #battery:hover,
 #clock:hover,
 #custom-launcher:hover,
-#hyprland-window:hover,
-#idle_inhibitor:hover {
+#idle_inhibitor:hover,
+#custom-power:hover {
     margin: 0px 10px;
     border-radius: 0px;
     background: @surface_container_highest;
     color: @on_surface;
+    transition:
+        margin 0.6s ease,
+        border-radius 0.5s ease;
 }
 
 #custom-power:hover {
@@ -82,13 +83,25 @@ window#waybar {
     color: @on_error;
 }
 
-/* Battery Icon */
-#battery.icon {
-    background: @surface_container_highest;
-    color: @on_surface_variant;
+
+
+/* Tooltip Style */
+tooltip {
+    background: @surface;
+    border: 2px solid @tertiary;
+    border-radius: 12px;
 }
 
-/* Workspaces */
+tooltip label {
+    color: @on_surface;
+    padding: 6px;
+}
+
+/*#######################################################################*/
+
+
+
+/*################## Workspaces ######################*/
 #workspaces button {
     color: @on_surface;
     border-radius: 15px;
@@ -104,33 +117,21 @@ window#waybar {
     background-color: @error;
 }
 
-/* Mode Indicator */
-#mode {
-    background-color: @surface_variant;
-    box-shadow: inset 0 -3px @on_surface;
+
+/* ================ Idle Inhibitor ==================== */
+#idle_inhibitor.activated {
+    background-color: @surface_container_highest;
+    color: @on_surface;
 }
 
-/* Custom Power Button */
-#custom-power {
-    background: @tertiary_container;
-    color: @on_tertiary_container;
-    margin: 0px 5px;
-    padding: 0px 5px;
-    font-size: 25px;
+/* =============== Temperature Critical ================ */
+#temperature.critical {
+    background-color: @error;
 }
 
-/* === Animations === */
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: black;
-    }
-}
-
-#battery.warning:not(.charging) {
-    color: @on_error;
-}
-#battery.critical:not(.charging) {
+/* =============== Privacy Items ========================= */
+#privacy-item.screenshare,
+#custom-camera.active {
     background-color: @error;
     color: @on_error;
     animation-name: blink;
@@ -140,12 +141,35 @@ window#waybar {
     animation-direction: alternate;
 }
 
-#battery.charging {
-    background-color: @primary;
-    color: @on_primary;
+#privacy-item.audio-in {
+    background-color: @error;
+    color: @on_error;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
-/* Power Profiles */
+/* =================== Camera Icon =============== */
+#custom-camera {
+    font-size: 18px;
+}
+
+/* =================== Tray ========================= */
+#tray {
+    background-color: @primary_container;
+    border: 2px solid @on_primary;
+    border-radius: 10px;
+}
+
+# #tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @error;
+}
+
+
+/* ================= Power Profiles ==================== */
 #power-profiles-daemon {
     padding-right: 15px;
 }
@@ -165,9 +189,13 @@ window#waybar {
     color: @on_tertiary;
 }
 
-/* Privacy Items */
-#privacy-item.screenshare,
-#custom-camera.active {
+
+/*###################### battary ##############################*/
+#battery.warning:not(.charging) {
+    color: @on_error;
+}
+
+#battery.critical {
     background-color: @error;
     color: @on_error;
     animation-name: blink;
@@ -177,52 +205,32 @@ window#waybar {
     animation-direction: alternate;
 }
 
-#privacy-item.audio-in {
-    background-color: @tertiary_container;
+#battery.charging {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+
+/* ==================== Custom Power Button ========== */
+#custom-power {
+    background: @tertiary_container;
     color: @on_tertiary_container;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    margin: 0px 5px;
+    padding: 0px 5px;
+    font-size: 25px;
 }
 
-/* Temperature Critical */
-#temperature.critical {
-    background-color: @error;
-}
 
-/* Tray */
-#tray {
-    background-color: @primary_container;
-    border: 2px solid @on_primary;
-    border-radius: 10px;
-}
 
-# #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: @error;
-}
 
-/* Idle Inhibitor */
-#idle_inhibitor.activated {
-    background-color: @surface_container_highest;
-    color: @on_surface;
-}
 
-/* Camera Icon */
-#custom-camera {
-    font-size: 18px;
-}
 
-/* Tooltip Style */
-tooltip {
-    background: @surface;
-    border: 2px solid @tertiary;
-    border-radius: 12px;
-}
 
-tooltip label {
-    color: @on_surface;
-    padding: 6px;
-}
+
+
+
+
+
+
+
+
