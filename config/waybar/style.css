@@ -12,6 +12,11 @@ Repository Link: https://github.com/samir176520/dotfiles
 ---------------------------------------------------------------               
 */
 
+/*
+rem: used to root things base layouts and spacing 
+em: relevent for the parent element  
+*/
+
 @import '../../.cache/wallpaper-theme/colors.css';
 
 @keyframes blink {
@@ -23,8 +28,8 @@ Repository Link: https://github.com/samir176520/dotfiles
 /* === Global Defaults === */
 * {
 
-    font-family: "Iosevka Nerd Font", "monospace";
-    font-size: 15px;
+    font-family: "Iosevka Nerd Font", monospace;
+    font-size: 1rem;
 }
 
 /* =========== Waybar Window ============== */
@@ -51,9 +56,9 @@ window#waybar {
 #custom-launcher,
 #hyprland-window,
 #idle_inhibitor {
-    padding: 0 5px;
-    margin: 1px 2px;
-    border-radius: 20px;
+    padding: 0 0.5em;
+    
+    border-radius: 5em;
 }
 
 /* Hover Effects */
@@ -68,8 +73,8 @@ window#waybar {
 #custom-launcher:hover,
 #idle_inhibitor:hover,
 #custom-power:hover {
-    margin: 0px 10px;
-    border-radius: 0px;
+    margin: 0 0.7em;
+    border-radius: 0em;
     background: @surface_container_highest;
     color: @on_surface;
     transition:
@@ -78,7 +83,7 @@ window#waybar {
 }
 
 #custom-power:hover {
-    border-radius: 0px;
+    border-radius: 0em;
     background: @error;
     color: @on_error;
 }
@@ -88,13 +93,13 @@ window#waybar {
 /* Tooltip Style */
 tooltip {
     background: @surface;
-    border: 2px solid @tertiary;
-    border-radius: 12px;
+    border: 0.1em solid @tertiary;
+    border-radius: 0.7em;
 }
 
 tooltip label {
     color: @on_surface;
-    padding: 6px;
+    padding: 0.3em;
 }
 
 /*#######################################################################*/
@@ -104,13 +109,12 @@ tooltip label {
 /*################## Workspaces ######################*/
 #workspaces button {
     color: @on_surface;
-    border-radius: 15px;
 }
 
 #workspaces button.active {
     color: @on_primary;
     background: @primary_fixed_dim;
-    border-radius: 0px;
+    border-radius: 0em;
 }
 
 #workspaces button.urgent {
@@ -153,14 +157,14 @@ tooltip label {
 
 /* =================== Camera Icon =============== */
 #custom-camera {
-    font-size: 18px;
+    font-size: 1.2em;
 }
 
 /* =================== Tray ========================= */
 #tray {
     background-color: @primary_container;
-    border: 2px solid @on_primary;
-    border-radius: 10px;
+    border: 0.1em solid @on_primary;
+    border-radius: 0.5em;
 }
 
 # #tray > .needs-attention {
@@ -171,7 +175,7 @@ tooltip label {
 
 /* ================= Power Profiles ==================== */
 #power-profiles-daemon {
-    padding-right: 15px;
+    padding-right: 1em;
 }
 
 #power-profiles-daemon.performance {
@@ -215,9 +219,9 @@ tooltip label {
 #custom-power {
     background: @tertiary_container;
     color: @on_tertiary_container;
-    margin: 0px 5px;
-    padding: 0px 5px;
-    font-size: 25px;
+    margin: 0em 0.3em;
+    padding: 0em 0.4em;
+    font-size: 1.7em;
 }
 
 
