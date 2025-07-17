@@ -30,7 +30,7 @@ choose_menu() {
     [[ -z "$CHOICE" ]] && exit 0
 
     if [[ "$CHOICE" == "Random" ]]; then
-        FILE=$(find "$WALL_DIR" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.webp" \) | shuf -n1)
+        FILE=$(find -L "$WALL_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" -o -iname "*.gif" \) | shuf -n1)
     else
         FILE="$WALL_DIR/$CHOICE"
     fi
