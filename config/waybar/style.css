@@ -111,6 +111,10 @@ tooltip label {
     color: @on_surface;
 }
 
+#workspaces button label {
+  letter-spacing: 0em;  /* controls space between repeated icons */
+}
+
 #workspaces button.active {
     color: @on_primary;
     background: @primary_fixed_dim;
