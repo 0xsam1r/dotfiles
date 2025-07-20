@@ -12,9 +12,17 @@ cat << 'EOF'
 EOF
 echo -e "\033[0m"  # Reset color
 
-mkdir -p .cache/wallpaper-theme/
-ln -s ~/dotfiles/wallpapers ~/Pictures/wallpapers
+
+mkdir -p ~/.cache/wallpaper-theme/
+
+mkdir -p ~/Pictures/wallpapers
+stow -t ~/Pictures/wallpapers wallpapers
+
 stow -t ~/.config config
+
+mkdir -p ~/.icons
+stow -t ~/.icons icons
+
 
 echo -e "\033[1;32m"  # Start green (bold)
 cat << 'EOF'
