@@ -14,11 +14,7 @@ Repository Link: https://github.com/samir176520/dotfiles
 
 // -*- mode: jsonc -*-
 {
-  // "layer": "top", // Waybar at top layer
   "position": "bottom", // Waybar position (top|bottom|left|right)
-  //"height": 30, // Waybar height (to be removed for auto height)
-  // "width": 1280, // Waybar width
-  "spacing": 4, // Gaps between modules (4px)
 
   // Choose the order of the modules
   "modules-left": [
@@ -68,9 +64,7 @@ Repository Link: https://github.com/samir176520/dotfiles
       // ---- Browsers ----
       "class<.*[fF]irefox.*>": "",
       "class<.*[cC]hrome.*>": "",
-      "class<.*[eE]dge.*>": "",
       "class<.*[bB]rave.*>": "",
-      "class<.*[wW]eb.*>": "",
 
       // ---- Code Editors ----
       "class<.*[cC]ode.*>": "󰨞",
@@ -95,7 +89,7 @@ Repository Link: https://github.com/samir176520/dotfiles
   },
 
   "hyprland/window": {
-    "format": "{class}",               // Shown in the bar
+    "format": "  {class}",               // Shown in the bar
     "tooltip": true,
     "tooltip-format": "{title}",       // Shown on hover
     "separate-outputs": true
@@ -109,21 +103,21 @@ Repository Link: https://github.com/samir176520/dotfiles
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-      "activated": "",
-      "deactivated": ""
+      "activated": " ",
+      "deactivated": " "
     }
   },
   
 
   "cpu": {
-    "format": "{usage}% ",
+    "format": "{usage}%  ",
     "tooltip": true
   },
 
 
   "memory": {
     "interval": 5,
-    "format": "{}% ",
+    "format": "{}%  ",
     "tooltip": true,
     "tooltip-format": " RAM: {used} / {total} GB\n💾 Swap: {swapUsed} / {swapTotal} GB"
   },
@@ -133,7 +127,7 @@ Repository Link: https://github.com/samir176520/dotfiles
     "thermal-zone": 1,
     "hwmon-path": "/sys/class/hwmon/hwmon2/temp_input",
     "critical-threshold": 80,
-    "format-critical": "{temperatureC}°C ",
+    "format-critical": "{temperatureC}°C  ",
     "format": "{temperatureC}°C {icon}",
     "format-icons": ["", "", "", "", ""],
     "tooltip": true,
@@ -146,7 +140,7 @@ Repository Link: https://github.com/samir176520/dotfiles
     "format": "{volume}% {icon} {format_source}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
+    "format-muted": " {format_source}",
     "format-source": "{volume}% ",
     "format-source-muted": "",
     "format-icons": {
@@ -156,7 +150,7 @@ Repository Link: https://github.com/samir176520/dotfiles
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
+      "default": [" ", " ", " " ]
     },
     "on-click": "pavucontrol"
   },
@@ -197,7 +191,8 @@ Repository Link: https://github.com/samir176520/dotfiles
     "return-type": "json",
     "format": "{}",
     "interval": 1,
-    "tooltip": false
+    "tooltip": false,
+    "hide-empty": true
   },
 
 
@@ -213,8 +208,7 @@ Repository Link: https://github.com/samir176520/dotfiles
 
 
   "tray": {
-    "icon-size": 15,
-    "spacing": 10
+    "spacing": 12
   },
 
   "power-profiles-daemon": {
@@ -224,7 +218,7 @@ Repository Link: https://github.com/samir176520/dotfiles
     "format-icons": {
       "default": "",
       "performance": "󰓅",
-      "balanced": "☯",
+      "balanced": "󰾅", 
       "power-saver": "󰌪"
     }
   },
@@ -243,14 +237,28 @@ Repository Link: https://github.com/samir176520/dotfiles
       "warning": 20,
       "critical": 10
     },
+    "interval": 1,
     "format": "{capacity}% {icon}",
     "format-full": "{capacity}% {icon}",
     "format-charging": "󰂅 {capacity}%",
     "format-charging-warning": "󰢝 {capacity}%",
     "format-charging-critical": "󰢜 {capacity}%",
     "format-plugged": "󰂅 {capacity}%",
-    "format-alt": "󱧥",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    // Default tooltip format
+    "tooltip-format": "Battery: {capacity}%\nStatus: Normal\n{timeTo}\nPower: {power}W\nBattery Health: {health}%",
+    
+    // Tooltip format when battery is at warning level (below 30%)
+    "tooltip-format-warning": "Battery: {capacity}%\nStatus: ⚠️ Battery Low!\n{timeTo}\nPower: {power}W\nBattery Health: {health}%",
+    
+    // Tooltip format when battery is at critical level (below 15%)
+    "tooltip-format-critical": "Battery: {capacity}%\nStatus: 🔴 Battery Critical!\n{timeTo}\nPower: {power}W\nBattery Health: {health}%",
+    
+    // Tooltip format when battery is charging
+    "tooltip-format-charging": "Battery: {capacity}%\nStatus: ⚡ Battery Charging\n{timeTo}\nPower: {power}W\nBattery Health: {health}%",
+    
+    // Enable tooltip display
+    "tooltip": true
   },
 
 
@@ -261,14 +269,20 @@ Repository Link: https://github.com/samir176520/dotfiles
 
 
   "clock": {
-    "format": "{:%I:%M %p}", // 12-hour with AM/PM
-    "format-alt": "{:%Y-%m-%d}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "format": "{:%I:%M %p}",
+    "interval": 1,
+    "format-alt": "{:%a, %b %d, %y}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "format": {
+        "today": "<b><u>{}</u></b>"
+      }
+    }
   },
 
   
   "custom/power": {
-    "format": "⏻",
+    "format": "",
     "tooltip": true,
     "tooltip-format": "power menu",
     "on-click": "wlogout -b 6"

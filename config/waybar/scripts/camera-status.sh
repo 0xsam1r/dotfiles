@@ -29,6 +29,6 @@ if fuser /dev/video0 > /dev/null 2>&1; then
     touch "$STATE_FILE"
   fi
 else
-  echo '{"text":"󱦿","class":"inactive"}'
+  echo '{"text":"","class":"inactive"}'
   rm -f "$STATE_FILE"
 fi

@@ -14,31 +14,36 @@ Repository Link: https://github.com/samir176520/dotfiles
 
 /*
 rem: used to root things base layouts and spacing 
-em: relevent for the parent element  
+em: relevent for the parent element 
+
+
 */
 
 @import '../../.cache/wallpaper-theme/colors.css';
 
+/* ============ Animations ============ */
 @keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-/* === Global Defaults === */
+/* ============ Base Settings ============ */
 * {
-
-    font-family: "Iosevka Nerd Font", monospace;
-    font-size: 1rem;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 1rem;
+  padding: 0em;
+  margin: 0em;
 }
 
-/* =========== Waybar Window ============== */
+/* ============ Waybar Container ============ */
 window#waybar {
     background-color: @surface;
     color: @on_surface;
+    border-bottom: 0.0625rem solid @outline; /* Optional subtle line */
 }
 
-/* ================= Shared Style ========= */
+/* ============ Modules Shared Style ============ */
 #workspaces button,
 #privacy-item,
 #cpu,
@@ -58,7 +63,7 @@ window#waybar {
 #idle_inhibitor {
     padding: 0 0.5em;
     
-    border-radius: 5em;
+    border-radius: 10em;
 }
 
 /* Hover Effects */
@@ -68,11 +73,9 @@ window#waybar {
 #temperature:hover,
 #pulseaudio:hover,
 #privacy:hover,
-#battery:hover,
 #clock:hover,
 #custom-launcher:hover,
-#idle_inhibitor:hover,
-#custom-power:hover {
+#idle_inhibitor:hover {
     margin: 0 0.7em;
     border-radius: 0em;
     background: @surface_container_highest;
@@ -82,163 +85,161 @@ window#waybar {
         border-radius 0.5s ease;
 }
 
+/* Power button specific hover */
 #custom-power:hover {
-    border-radius: 0em;
-    background: @error;
-    color: @on_error;
+margin: 0 0.7em;
+  color: @error;
+      transition:
+        margin 0.6s ease,
+        border-radius 0.5s ease;
 }
 
-
-
-/* Tooltip Style */
+/* ============ Tooltip ============ */
 tooltip {
-    background: @surface;
-    border: 0.1em solid @tertiary;
-    border-radius: 0.7em;
+  background-color: @surface;
+  border: 0.1rem solid @tertiary;
+  border-radius: 0.7rem;
 }
-
 tooltip label {
-    color: @on_surface;
-    padding: 0.3em;
+  color: @on_surface;
+  padding: 0.3rem;
 }
 
-/*#######################################################################*/
-
-
-
-/*################## Workspaces ######################*/
+/* ============ Workspaces ============ */
 #workspaces button {
-    color: @on_surface;
+  color: @on_surface;
 }
-
 #workspaces button label {
-  letter-spacing: 0em;  /* controls space between repeated icons */
+  letter-spacing: 0; /* Keeps icons tight */
 }
-
 #workspaces button.active {
-    color: @on_primary;
-    background: @primary_fixed_dim;
-    border-radius: 0em;
+  background: @primary_fixed_dim;
+  color: @on_primary;
+  border-radius: 0;
 }
-
 #workspaces button.urgent {
-    background-color: @error;
+  background-color: @error;
 }
 
-
-/* ================ Idle Inhibitor ==================== */
+/* ============ Idle Inhibitor ============ */
 #idle_inhibitor.activated {
     background-color: @surface_container_highest;
     color: @on_surface;
+    margin: 0;
+  
 }
 
-/* =============== Temperature Critical ================ */
+/* ============ Temperature ============ */
 #temperature.critical {
-    background-color: @error;
+  background-color: @error;
 }
 
-/* =============== Privacy Items ========================= */
+/* ============ Privacy Indicators ============ */
 #privacy-item.screenshare,
-#custom-camera.active {
-    background-color: @error;
-    color: @on_error;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
+#custom-camera.active,
 #privacy-item.audio-in {
-    background-color: @error;
-    color: @on_error;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background-color: @error;
+  color: @on_error;
+  animation: blink 0.5s steps(12) infinite alternate;
 }
 
-/* =================== Camera Icon =============== */
+/* ============ Camera Icon ============ */
 #custom-camera {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
-/* =================== Tray ========================= */
+/* ============ System Tray ============ */
 #tray {
-    background-color: @primary_container;
-    border: 0.1em solid @on_primary;
-    border-radius: 0.5em;
-}
-
-# #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: @error;
+    padding: 0 0.5em 0 0.5em;
 }
 
 
-/* ================= Power Profiles ==================== */
+menu {
+    background-color: @surface;
+    border: 0.1rem solid @tertiary;
+    border-radius: 0.7em;
+    color: @on_surface;
+    padding: 0.3rem;
+}
+
+#tray menu menuitem:hover {
+  background: @primary_fixed_dim;
+  color: @on_primary;
+	border-radius: 0.35em;
+}
+
+
+/* ============ Power Profiles ============ */
 #power-profiles-daemon {
-    padding-right: 1em;
+  padding-right: 1rem;
 }
 
 #power-profiles-daemon.performance {
-    background-color: @error;
-    color: @on_error;
+  background-color: @error;
+  color: @on_error;
 }
 
 #power-profiles-daemon.balanced {
-    background-color: @primary;
-    color: @on_primary;
+  background-color: @primary;
+  color: @on_primary;
 }
 
 #power-profiles-daemon.power-saver {
-    background-color: @tertiary;
-    color: @on_tertiary;
+  background-color: @tertiary;
+  color: @on_tertiary;
 }
 
-
-/*###################### battary ##############################*/
+/* ============ Battery ============ */
 #battery.warning:not(.charging) {
-    color: @on_error;
+  color: @on_error;
 }
 
 #battery.critical {
-    background-color: @error;
-    color: @on_error;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background-color: @error;
+  color: @on_error;
+  animation: blink 0.5s steps(12) infinite alternate;
 }
 
 #battery.charging {
-    background-color: @primary;
-    color: @on_primary;
+  background-color: @primary;
+  color: @on_primary;
 }
 
 
-/* ==================== Custom Power Button ========== */
+/* ============ Custom Power Button ============ */
 #custom-power {
-    background: @tertiary_container;
-    color: @on_tertiary_container;
-    margin: 0em 0.3em;
-    padding: 0em 0.4em;
-    font-size: 1.7em;
+  padding: 0em 0.6em 0em 0em;
+  color: @on_tertiary_container;
+
+  font-size: 1.5em;
 }
 
+/*
+for fonts:
+1. "JetBrainsMono Nerd Font"
+   ▪️ ممتازة للتطبيقات و الواجهات بشكل عام – نظيفة وواضحة
+   ▪️ تثبيت:
+      yay -S ttf-jetbrains-mono-nerd
 
+2. "Iosevka Nerd Font"
+   ▪️ خط برمجي نحيف ومنظم – مثالي للكود وتوزيع النصوص
+   ▪️ تثبيت:
+      yay -S ttf-iosevka-nerd
 
+3. "FiraCode Nerd Font"
+   ▪️ مشهور جدًا بين المبرمجين – يدعم ligatures
+   ▪️ تثبيت:
+      yay -S ttf-firacode-nerd
 
+4. "Mononoki Nerd Font"
+   ▪️ خط مميز ومريح للعين، ويشبه الخطوط التقليدية للكود
+   ▪️ تثبيت:
+      yay -S ttf-mononoki-nerd
 
-
-
-
-
-
-
-
-
-
-
+5. "Hack Nerd Font"
+ * خط كلاسيكي واضح ممتاز للطرفية وبيئات البرمجة.
+ * تثبيت: yay -S ttf-hack-nerd أو تحميل يدوي من Nerd Fonts GitHub.
+ * يدعم آلاف الأيقونات (Nerd Font) ويُميز الرموز بدقة (O/0, l/1).
+ تثييت: 
+  yay -S ttf-hack-nerd
+  */
