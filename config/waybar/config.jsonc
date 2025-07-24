@@ -271,7 +271,7 @@ Repository Link: https://github.com/samir176520/dotfiles
   "clock": {
     "format": "{:%I:%M %p}",
     "interval": 1,
-    "format-alt": "{:%a, %b %d, %y}",
+    "format-alt": "{:%a, %b %d, %Y}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "format": {

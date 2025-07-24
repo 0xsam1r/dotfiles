@@ -32,16 +32,17 @@ em: relevent for the parent element
 * {
   font-family: "JetBrainsMono Nerd Font", monospace;
   font-size: 1rem;
-  padding: 0em;
-  margin: 0em;
+
 }
 
 /* ============ Waybar Container ============ */
 window#waybar {
     background-color: @surface;
-    color: @on_surface;
-    border-bottom: 0.0625rem solid @outline; /* Optional subtle line */
+    color: @inverse-on_surface;
+     /* Optional subtle line */
 }
+
+
 
 /* ============ Modules Shared Style ============ */
 #workspaces button,
@@ -68,11 +69,6 @@ window#waybar {
 
 /* Hover Effects */
 #workspaces button:hover,
-#cpu:hover,
-#memory:hover,
-#temperature:hover,
-#pulseaudio:hover,
-#privacy:hover,
 #clock:hover,
 #custom-launcher:hover,
 #idle_inhibitor:hover {
@@ -113,7 +109,7 @@ tooltip label {
   letter-spacing: 0; /* Keeps icons tight */
 }
 #workspaces button.active {
-  background: @primary_fixed_dim;
+  background: @primary;
   color: @on_primary;
   border-radius: 0;
 }
@@ -123,10 +119,8 @@ tooltip label {
 
 /* ============ Idle Inhibitor ============ */
 #idle_inhibitor.activated {
-    background-color: @surface_container_highest;
-    color: @on_surface;
-    margin: 0;
-  
+  background: @primary;
+  color: @on_primary;
 }
 
 /* ============ Temperature ============ */
@@ -191,7 +185,8 @@ menu {
 
 /* ============ Battery ============ */
 #battery.warning:not(.charging) {
-  color: @on_error;
+  color: @error;
+  background-color: @on-error;
 }
 
 #battery.critical {
@@ -209,7 +204,7 @@ menu {
 /* ============ Custom Power Button ============ */
 #custom-power {
   padding: 0em 0.6em 0em 0em;
-  color: @on_tertiary_container;
+  color: @primary;
 
   font-size: 1.5em;
 }
