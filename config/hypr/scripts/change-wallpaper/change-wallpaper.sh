@@ -13,9 +13,9 @@ set_wallpaper() {
         --transition-step 90 \
         --transition-fps 60
 
-    matugen image "$IMG"
+    matugen image "$IMG" --mode dark
 
-    notify-send --icon "$IMG" " Wallpaper Changed 🎨" "Applied: $(basename "$IMG")"
+    notify-send --icon "$IMG"  " Wallpaper Changed 🎨" "Applied: $(basename "$IMG")"
     #======================================
 
     #=======================================

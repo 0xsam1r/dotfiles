@@ -38,7 +38,7 @@ em: relevent for the parent element
 /* ============ Waybar Container ============ */
 window#waybar {
     background-color: @surface;
-    color: @inverse-on_surface;
+    color: @on_surface;
      /* Optional subtle line */
 }
 
