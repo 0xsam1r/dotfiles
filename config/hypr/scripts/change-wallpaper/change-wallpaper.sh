@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+#================TODO=======================
+# [] rewrite the script 
+# [] using thumbainlas 
+#   [] using rofi theme for thumbainals
+#   [] edit script to work with thumbainals
+#===========================================
 
 WALL_DIR="$HOME/Pictures/wallpapers"                  
 set_wallpaper() {

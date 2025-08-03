@@ -75,6 +75,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliases
 
 alias v='vim'
+alias sucman='sudo pacman'
 alias c='clear'
 alias l='eza -lha --icons=auto'                                        # long list hidden
 alias l='eza -lh --icons=auto'                                         # long list
