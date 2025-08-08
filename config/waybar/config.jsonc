@@ -16,6 +16,8 @@ Repository Link: https://github.com/samir176520/dotfiles
 {
   "position": "bottom", // Waybar position (top|bottom|left|right)
 
+   "reload_style_on_change": true, 
+
   // Choose the order of the modules
   "modules-left": [
     "custom/launcher",

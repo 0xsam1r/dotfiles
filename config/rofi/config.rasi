@@ -7,31 +7,32 @@
 ///////////////////////////////////////////////////////////////////
 
 @import "~/.cache/wallpaper-theme/rofi-colors.rasi"
+@import "~/.cache/wal/rofi-colors.rasi"
 
 * {
-    font: "Midorima - Personal Use 13";
-    g-spacing: 10px;
-    g-margin: 0;
-    b-radius: 8px;
-    g-padding: 8px;
+    font: "JetBrainsMono Nerd Font 13";
+    g-spacing: 0.2em;
+    g-margin: 0em;
+    b-radius: 0.5em;
+    g-padding: 0.3em;
 
-    fg-color: @on-surface;
-    fgp-color: @on-surface-variant;
-    b-color: @outline-variant;
+    fg-color: @foreground;
+    fgp-color: @color8;
+    b-color: @color4;
 
-    hl-color: @primary;
-    hlt-color: @on-primary;
-    alt-color: @surface-container-low;
-    wbg-color: @surface;
-    w-border: 2px solid;
-    w-border-color: @primary;
-    w-padding: 12px;
+    hl-color: @color9;
+    hlt-color: @foreground;
+    alt-color: @color0;
+    wbg-color: @background;
+    w-border: 0.1em solid;
+    w-border-color: @color7;
+    w-padding: 1em;
 }
 
 configuration {
     modi: "drun";
     show-icons: true;
-    display-drun: "";
+    display-drun: " ";
 }
 
 listview {
@@ -41,12 +42,12 @@ listview {
     fixed-columns: true;
     cycle: false;
     scrollbar: false;
-    border: 0px solid;
+    border: 0em solid;
 }
 
 window {
     transparency: "real";
-    width: 450px;
+    width: 18em;
     border-radius: @b-radius;
     background-color: @wbg-color;
     border: @w-border;
@@ -108,7 +109,7 @@ element selected.normal {
 }
 
 message {
-    background-color: @error-container;
-    text-color: @on-error-container;
+    background-color: @color6;
+    text-color: @foreground;
     border: 0px solid;
 }

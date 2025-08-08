@@ -1,48 +1,57 @@
 #!/usr/bin/env bash
 #================TODO=======================
-# [] rewrite the script 
+# [X] rewrite the script 
 # [] using thumbainlas 
 #   [] using rofi theme for thumbainals
 #   [] edit script to work with thumbainals
 #===========================================
 
-WALL_DIR="$HOME/Pictures/wallpapers"                  
+WALL_DIR="$HOME/Pictures/wallpapers"
+
+# function to set wallpaper 
 set_wallpaper() {
     local IMG="$1"
 
-    
+    # false doesn't countinue in and 
     [[ ! -f "$IMG" ]] && echo "Wallpaper Change Error" "File not found: $IMG" && notify-send "Wallpaper Error" "File not found: $IMG" && exit 1
 
+    # command to change wallpaper
     swww img "$IMG" \
-        --transition-type wipe \
-        --transition-pos 0.5,0.5 \
+        --transition-type random \
         --transition-step 90 \
         --transition-fps 60
 
-    matugen image "$IMG" --mode dark
+    # making theme 
+    walrs -i $IMG 
 
     notify-send --icon "$IMG"  " Wallpaper Changed 🎨" "Applied: $(basename "$IMG")"
     #======================================
 
     #=======================================
-    # ./convert-gif.sh $IMG make errors read your current folder not script folder 
+    # make static image for hyprlock
     $(dirname "$0")/hyprlock-wallpaper-setter $IMG
 }
 
+
 choose_menu() {
-    CHOICE=$(echo -e "Random\n$(ls -1v "$WALL_DIR")" | rofi -dmenu -p "󰋫 Wallpaper" -i -lines 15 -width 40)
+    # choice wallpaper using rofi
+    CHOICE=$(echo -e "Random\n$(ls -1v "$WALL_DIR")" | rofi -dmenu -p "󰋫 Wallpaper" -i)
 
     [[ -z "$CHOICE" ]] && exit 0
 
+    # select one random wallpaper
     if [[ "$CHOICE" == "Random" ]]; then
         FILE=$(find -L "$WALL_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" -o -iname "*.gif" \) | shuf -n1)
+        
     else
         FILE="$WALL_DIR/$CHOICE"
     fi
 
+    # call our function to apply wallpaper
     set_wallpaper "$FILE"
 }
 
+# apply based on input
 case "$#" in
     0) choose_menu ;;
     1) set_wallpaper "$1" ;;
