@@ -12,11 +12,13 @@ A carefully crafted collection of dotfiles built for a fully customized and effi
 
 # 🎨 Show Case
 
-![Screenshot](assets/pre5.png)
-![Screenshot](assets/pre2.png)
 ![Screenshot](assets/pre1.png)
+![Screenshot](assets/pre2.png)
 ![Screenshot](assets/pre3.png)
 ![Screenshot](assets/pre4.png)
+![Screenshot](assets/pre5.png)
+![Screenshot](assets/pre6.png)
+![Screenshot](assets/pre7.png)
 
 ## 🧭 Overview
 
