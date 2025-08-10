@@ -6,7 +6,7 @@
 //
 ///////////////////////////////////////////////////////////////////
 
-@import "~/.cache/wallpaper-theme/rofi-colors.rasi"
+
 @import "~/.cache/wal/rofi-colors.rasi"
 
 * {
