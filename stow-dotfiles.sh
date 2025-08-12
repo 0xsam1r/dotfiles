@@ -12,8 +12,7 @@ cat << 'EOF'
 EOF
 echo -e "\033[0m"  # Reset color
 
-
-mkdir -p ~/.cache/wallpaper-theme/
+ln -s ~/dotfiles/scripts ~/.config/scripts
 
 mkdir -p ~/Pictures/wallpapers
 stow -t ~/Pictures/wallpapers wallpapers
