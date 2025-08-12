@@ -189,7 +189,7 @@ Repository Link: https://github.com/samir176520/dotfiles
   
   
   "custom/camera": {
-    "exec": "~/.config/waybar/scripts/camera-status.sh",
+    "exec": "~/.config/scripts/camera-status.sh",
     "return-type": "json",
     "format": "{}",
     "interval": 1,
