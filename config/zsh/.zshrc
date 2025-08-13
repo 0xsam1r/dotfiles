@@ -83,7 +83,9 @@ alias a='eza -a --icons=auto'                                        # list hidd
 alias ls='eza --icons=auto'                                            # short list
 alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
 alias ld='eza -lhD --icons=auto'                                       # long list dirs
-alias lt='eza --icons=auto --tree'                                     # list folder as tree
+alias lt='eza --icons=auto --tree' # list folder as tree
+alias start= 'hyprctl dispatch exec'
+
 
 # Shell integrations
 eval "$(fzf --zsh)" # ctrl + r open a search in history using fzf
