@@ -25,7 +25,7 @@ A carefully crafted collection of dotfiles built for a fully customized and effi
 This repository is my personal system configuration — built around:
 
 - ⚡ **Hyprland** as the main window manager
-- 🎨 Dynamic theming using **Matugen**
+- 🎨 Dynamic theming using **Walrs**
 - 🖥️ Custom terminal environment (Kitty + Zsh)
 - 🧩 Modular layout using **GNU Stow**
 - 🔐 Hardened script permissions and layout for secure usage
@@ -48,12 +48,12 @@ dotfiles/
 │   ├── gtk-4.0
 │   ├── hypr
 │   ├── kitty
-│   ├── matugen
+│   ├── walrs
 │   ├── poweralertd
 │   ├── qt5ct
 │   ├── qt6ct
 │   ├── rofi
-│   ├── swaync
+│   ├── mako
 │   ├── waybar
 │   ├── wlogout
 │   └── zsh
@@ -73,9 +73,9 @@ dotfiles/
 | Idle Daemon    | Hypridle         |
 | Bar            | Waybar           |
 | Launcher       | Rofi             |
-| Notifications  | SwayNC           |
+| Notifications  | Mako             |
 | Terminal       | Kitty + Zsh      |
-| Theming        | GTK 3/4, QT5/6, Matugen |
+| Theming        | Walrs            |
 | Logout Menu    | Wlogout          |
 | Power Alerts   | Poweralerted     |
 
@@ -99,7 +99,7 @@ chmod +x stow-dotfiles
 
 🎨 Dynamic Theming
 
-Powered by Matugen, themes automatically adjust based on your selected wallpaper.
+Powered by Walrs, themes automatically adjust based on your selected wallpaper.
 
 UI components like Waybar, Rofi, GTK, and QT sync to provide a cohesive experience.
 
@@ -120,5 +120,5 @@ This repo is an evolving workspace. I’m always experimenting — breaking thin
 If you're diving into Linux customization, tiling WMs, or secure scripting, feel free to explore or fork!
 
 # Comming soon.... ان شاء الله
-### [ ] quick-shell
-### [ ] output colors in cashe and import them 
+### [ ] using Walker 
+### [X] output colors in cashe and import them 
