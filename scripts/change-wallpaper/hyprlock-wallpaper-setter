@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 WALL="$1"
-LOCK_DIR="$HOME/.cache/wallpaper-theme"
+LOCK_DIR="$HOME/.cache/wal"
 LOCK_DEST="$LOCK_DIR/hyprlock.png"
 
 # Create cache directory if missing

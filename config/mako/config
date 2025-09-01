@@ -1,8 +1,8 @@
 # walrs -> mako template
 # Save as: ~/.config/walrs/templates/mako.template
-# Placeholders provided by walrs: #031109, #c0cec9, #c0cec9, #031109 ... #c0cec9, 100
-# If walrs outputs 6-digit hex (#rrggbb) and also 100 (like "cc"), use #031109100
-# If walrs outputs full 8-digit hex (#rrggbbaa), use #031109
+# Placeholders provided by walrs: #190c07, #d8cfcc, #d8cfcc, #190c07 ... #d8cfcc, 100
+# If walrs outputs 6-digit hex (#rrggbb) and also 100 (like "cc"), use #190c07100
+# If walrs outputs full 8-digit hex (#rrggbbaa), use #190c07
 
 # -----------------------
 # General layout
@@ -20,39 +20,39 @@ anchor=top-right
 # Core colors (choose the uncommented lines that match your walrs output)
 # -----------------------
 # If walrs provides 6-digit hex and 100 separately:
-background-color=#031109ff
+background-color=#190c07ff
 
 
-text-color=#c0cec9
+text-color=#d8cfcc
 # border (accent)
-border-color=#c0cec9
+border-color=#d8cfcc
 
 # -----------------------
 # Per-urgency overrides
 # -----------------------
 [urgency=low]
 # low: soft / neutral
-border-color=#37594c  
+border-color=#ff2f00  
 
-#background-color=#031109100
+#background-color=#190c07100
 # If walrs outputs 8-digit hex use:
-# background-color=#031109
+# background-color=#190c07
 
 [urgency=normal]
 # normal: default notification
-border-color=#6f271e 
-#background-color=#031109100
+border-color=#6b5348 
+#background-color=#190c07100
 # If walrs outputs 8-digit hex use:
-# background-color=#031109
+# background-color=#190c07
 
 [urgency=critical]
 # critical: sticky until dismissed (0 = no auto timeout)
 default-timeout=0
-border-color=#4a6c5f
-text-color=#c0cec9
-#background-color=#4a6c5f100
+border-color=#826d65
+text-color=#d8cfcc
+#background-color=#826d65100
 # Or if walrs outputs rgba hex:
-# background-color=#4a6c5f
+# background-color=#826d65
 
 # -----------------------
 # Example optional tweaks
@@ -61,5 +61,5 @@ text-color=#c0cec9
 # icon-round=true
 
 # If you want different color for summaries / body you can add:
-# summary-color=#6f271e
-# body-color=#c0cec9
+# summary-color=#6b5348
+# body-color=#d8cfcc

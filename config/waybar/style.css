@@ -8,7 +8,7 @@
 ---------------------------------------------------------------
 Written by Samir Ahmed
 
-Repository Link: https://github.com/samir176520/dotfiles
+Repository Link: https://github.com/0xsam1r/dotfiles
 ---------------------------------------------------------------               
 */
 
@@ -160,7 +160,7 @@ menu {
 }
 
 #tray menu menuitem:hover {
-  background: @color3;
+  background: @color15;
   color: @background;
 	border-radius: 0.35em;
 }
@@ -207,7 +207,7 @@ menu {
 /* ============ Custom Power Button ============ */
 #custom-power {
   padding: 0em 0.6em 0em 0em;
-  color: @color3;
+  color: @color13;
 
   font-size: 1.5em;
 }

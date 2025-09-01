@@ -1,12 +1,14 @@
 #!/bin/bash
 # main process
-	# read input, inial counter for valid paths
-	# handle inputs path, commands exit, ps,.... {while + case }
-	# ps print counter 
-	# print number of valid paths and end the script
+	# inial counter for valid paths
+	# read inputs
+	# handle input paths, 
+	# handle commands ex  {-exit, -vp}
+	# -vp print counter 
+	# -exit print number of valid paths and exit
 # check (function)
-	# check if path exist using if
-	# check type of path
+	# check if path exist using 
+	# check type of path {directory or a file}
 	# print the meta data using stat cammand
 	# increase counter
 clear
@@ -16,7 +18,6 @@ check() {
 	path=$1
 
 	if [[ -e $path ]] ; then 
-		echo "oh!! $path is valid"
 		((counter++))
 		[[ -d $path ]] && echo "Oh! $path is a directory"
 		[[ -f $path ]] && echo "Oh! $path is a file"
@@ -42,7 +43,7 @@ while [[ $path != "-exit" ]] ; do
 			echo "Valid paths: $counter" "BYE!....."
 			echo "======================="
 			exit ;;
-		"-ps")	
+		"-vp")	
 			echo "Valid paths number: $counter" ;;
 		*)
 			check $path ;;

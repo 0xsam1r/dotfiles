@@ -9,5 +9,5 @@ if [[ -e $file ]] ; then
 	[[ -f $file ]] && echo "\"$file\" is a ordinary file"
 	[[ -d $file ]] && echo "\"$file\" is a directory"
 else
-	echo "\"$file\" not exist"
+	echo "$file not exist"
 fi

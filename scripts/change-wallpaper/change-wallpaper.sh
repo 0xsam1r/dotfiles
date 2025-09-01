@@ -22,7 +22,7 @@ set_wallpaper() {
         --transition-fps 60
 
     # making theme 
-    walrs -i $IMG 
+    walrs -i $IMG  -W
 
     notify-send --icon "$IMG"  " Wallpaper Changed 🎨" "Applied: $(basename "$IMG")"
     #======================================

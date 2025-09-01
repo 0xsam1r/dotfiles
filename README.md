@@ -28,12 +28,13 @@ This repository is my personal system configuration — built around:
 - 🎨 Dynamic theming using **Walrs**
 - 🖥️ Custom terminal environment (Kitty + Zsh)
 - 🧩 Modular layout using **GNU Stow**
-- 🔐 Hardened script permissions and layout for secure usage
+- 🔐 Hardened script permissions and layout for secure usage, **comming soon!.**
 - 🎯 Focus on both usability and scriptability
 
 ---
 
 ## 📂 Directory Structure
+
 ```
 dotfiles/
 |
@@ -62,22 +63,23 @@ dotfiles/
 │ 
 └── wallpapers
 ```
+
 ---
 
 ## ⚙️ Technologies
 
-| Component       | Tool             |
-|----------------|------------------|
-| WM             | Hyprland         |
-| Lock           | Hyprlock         |
-| Idle Daemon    | Hypridle         |
-| Bar            | Waybar           |
-| Launcher       | Rofi             |
-| Notifications  | Mako             |
-| Terminal       | Kitty + Zsh      |
-| Theming        | Walrs            |
-| Logout Menu    | Wlogout          |
-| Power Alerts   | Poweralerted     |
+| Component     | Tool         |
+| ------------- | ------------ |
+| WM            | Hyprland     |
+| Lock          | Hyprlock     |
+| Idle Daemon   | Hypridle     |
+| Bar           | Waybar       |
+| Launcher      | Rofi         |
+| Notifications | Mako         |
+| Terminal      | Kitty + Zsh  |
+| Theming       | Walrs        |
+| Logout Menu   | Wlogout      |
+| Power Alerts  | Poweralerted |
 
 ---
 
@@ -86,16 +88,16 @@ dotfiles/
 ### 🧱 Clone the repo
 
 ```bash
-git clone https://github.com/samir176520/dotfiles.git ~/dotfiles
+git clone https://github.com/0xsam1r/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
 feel free to copy files manual or delete old configrations and run stow-dotfiles command
 don't forget 
-``` bash
+
+```bash
 chmod +x stow-dotfiles
 ```
-
 
 🎨 Dynamic Theming
 
@@ -105,13 +107,11 @@ UI components like Waybar, Rofi, GTK, and QT sync to provide a cohesive experien
 
     No bloat — only tools I use and improve regularly.
 
-
 # 📄 License
 
 Licensed under the MIT License.
 
 Feel free to fork, adapt, and use for your own setup — credit is appreciated.
-
 
 # 🧠 Final Thoughts
 
@@ -120,5 +120,7 @@ This repo is an evolving workspace. I’m always experimenting — breaking thin
 If you're diving into Linux customization, tiling WMs, or secure scripting, feel free to explore or fork!
 
 # Comming soon.... ان شاء الله
-### [ ] using Walker 
-### [X] output colors in cashe and import them 
+
+### [ ] using Walker
+
+### [X] output colors in cashe and import them

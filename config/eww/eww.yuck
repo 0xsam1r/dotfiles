@@ -11,11 +11,11 @@
 
 ; clock widget
 (defwindow clock
-  :monitor 0
-  :geometry (geometry :x "6%"
-                      :y "-3%"
+  :monitor 0  
+  :geometry (geometry :x "0%"
+                      :y "10%"
                       :width "40%"
-                      :anchor "bottom right")
+                      :anchor "top left")
   :stacking "bottom"
 
   (box
