@@ -20,7 +20,17 @@ set_wallpaper() {
         --transition-type random
 
     # making theme 
-    wallust run $IMG
+   # Try wal backend first
+	if wallust run $IMG --backend wal ; then
+    		echo "Successfully generated with wal backend"
+	elif wallust run $IMG --backend kmeans ; then
+    		echo "Wal backend failed, trying kmeans as fallback..."
+		sleep 1
+	else
+		echo "try pywal as last try"
+    		wallust pywal -i $IMG
+	fi	
+ 
     ~/.config/scripts/refresh.sh
     notify-send --icon "$IMG"  " Wallpaper Changed 🎨" "Applied: $(basename "$IMG")"
     #======================================

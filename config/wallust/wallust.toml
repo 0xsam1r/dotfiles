@@ -38,7 +38,7 @@ threshold= 11
 
 [templates]
 eww.template = 'colors.scss'
-eww.target = '~/.cache/wallust/color.scss'
+eww.target = '~/.cache/wallust/colors.scss'
 
 hypr.template = 'hyprland'
 hypr.target = '~/.cache/wallust/hyprland-colors.conf'
