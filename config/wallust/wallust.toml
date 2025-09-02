@@ -44,13 +44,13 @@ hypr.template = 'hyprland'
 hypr.target = '~/.cache/wallust/hyprland-colors.conf'
 
 rofi.template = 'rofi'
-rofi.target = '~/.cache/wallust/colors-rofi.rasi'
+rofi.target = '~/.cache/wallust/rofi-colors.rasi'
 
 waybar.template = 'waybar'
-waybar.target = '~/.config/waybar/wallust/colors-waybar.css'
+waybar.target = '~/.cache/wallust/waybar-colors.css'
 
 kitty.template = 'kitty'
-kitty.target = '~/.config/kitty/kitty-themes/01-Wallust.conf'
+kitty.target = '~/.cache/wallust/kitty-colors.conf'
 
 
 mako.template = 'mako'
