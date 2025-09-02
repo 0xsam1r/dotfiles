@@ -17,6 +17,7 @@ ln -s ~/dotfiles/scripts ~/.config/scripts
 mkdir -p ~/Pictures/wallpapers
 stow -t ~/Pictures/wallpapers wallpapers
 
+mkdir -p ~/.config/mako
 stow -t ~/.config config
 
 mkdir -p ~/.icons
