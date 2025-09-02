@@ -17,19 +17,16 @@ set_wallpaper() {
 
     # command to change wallpaper
     swww img "$IMG" \
-        --transition-type random \
-        --transition-step 90 \
-        --transition-fps 60
+        --transition-type random
 
     # making theme 
-    walrs -i $IMG  -W
-
+    wallust run $IMG
+    ~/.config/scripts/refresh.sh
     notify-send --icon "$IMG"  " Wallpaper Changed 🎨" "Applied: $(basename "$IMG")"
     #======================================
 
     #=======================================
-    # make static image for hyprlock
-    $(dirname "$0")/hyprlock-wallpaper-setter $IMG
+    # make static image for hyp
 }
 
 

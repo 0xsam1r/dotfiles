@@ -7,14 +7,14 @@
 ///////////////////////////////////////////////////////////////////
 
 
-@import "~/.cache/wal/rofi-colors.rasi"
+@import "~/.cache/wallust/rofi-colors.rasi"
 
 * {
     font: "JetBrainsMono Nerd Font 13";
-    g-spacing: 0.2em;
-    g-margin: 0em;
-    b-radius: 0.5em;
-    g-padding: 0.3em;
+    g-spacing: 10px;
+    g-margin: 0px;
+    b-radius: 10px;
+    g-padding: 10px;
 
     fg-color: @foreground;
     fgp-color: @color8;

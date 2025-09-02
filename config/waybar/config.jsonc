@@ -15,7 +15,7 @@ Repository Link: https://github.com/samir176520/dotfiles
 // -*- mode: jsonc -*-
 {
   "position": "bottom", // Waybar position (top|bottom|left|right)
-
+  //"width": 1100,
    "reload_style_on_change": true, 
 
   // Choose the order of the modules

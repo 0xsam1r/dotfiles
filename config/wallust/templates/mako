@@ -1,6 +1,6 @@
 layer=overlay
-background-color=#151218
-border-color=#7A4E5D
+background-color={{background}}
+border-color={{color2}}
 margin=12
 padding=12
 border-size=2
@@ -8,16 +8,16 @@ border-radius=8
 default-timeout=5000
 ignore-timeout=1
 font=JetBrainsMono Nerd Font 12, Hack Nerd Font 12
-text-color=#FFF1D2
+text-color={{foreground}}
 outer-margin=0,5,15,0
 anchor=bottom-right
 
 [urgency=high]
-border-color=#AD5761
+border-color={{color4}}
 default-timeout=0
 
 [urgency=low]
-border-color=#403C44
+border-color={{color0}}
 
 [category=mpd]
 default-timeout=2000

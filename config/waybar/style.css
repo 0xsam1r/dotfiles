@@ -19,7 +19,7 @@ em: relevent for the parent element
 
 */
 
-@import '../../.cache/wal/waybar-colors.css';
+@import '../../.cache/wallust/waybar-colors.css';
 
 
 /* ============ Animations ============ */
@@ -65,9 +65,9 @@ window#waybar {
 #custom-launcher,
 #hyprland-window,
 #idle_inhibitor {
-    padding: 0 0.5em;
+    padding: 0 5px;
     
-    border-radius: 10em;
+    border-radius: 100px;
 }
 
 /* Hover Effects */
@@ -75,10 +75,10 @@ window#waybar {
 #clock:hover,
 #custom-launcher:hover,
 #idle_inhibitor:hover {
-    margin: 0 0.7em;
-    border-radius: 0em;
+    margin: 0 7px;
+    border-radius: 0px;
     background: @cursor;
-    color: @background;
+    color: @color0;
     transition:
         margin 0.6s ease,
         border-radius 0.5s ease;
@@ -86,7 +86,7 @@ window#waybar {
 
 /* Power button specific hover */
 #custom-power:hover {
-margin: 0 0.7em;
+margin: 0 7px;
   color: @cursor;
       transition:
         margin 0.6s ease,
@@ -97,11 +97,11 @@ margin: 0 0.7em;
 tooltip {
   background-color: @color0;
   border: 0.1rem solid @color3;
-  border-radius: 0.7rem;
+  border-radius: 7px;
 }
 tooltip label {
   color: @color7;
-  padding: 0.3rem;
+  padding: 3px;
 }
 
 /* ============ Workspaces ============ */
@@ -113,7 +113,7 @@ tooltip label {
 }
 #workspaces button.active {
   background: @foreground;
-  color: @background;
+  color: @color0;
   border-radius: 0;
 }
 #workspaces button.urgent {
@@ -136,54 +136,56 @@ tooltip label {
 #custom-camera.active,
 #privacy-item.audio-in {
   background-color: @cursor;
-  color: @background;
+  color: @color0;
   animation: blink 0.5s steps(12) infinite alternate;
 }
 
 /* ============ Camera Icon ============ */
 #custom-camera {
-  font-size: 1.2em;
+  font-size: 12px;
 }
 
 /* ============ System Tray ============ */
 #tray {
-    padding: 0 0.5em 0 0.5em;
+    padding: 0 5px 0 5px;
+    color: @color15;
 }
 
 
 menu {
     background-color: @color0;
     border: 0.1rem solid @color3;
-    border-radius: 0.7em;
+    border-radius: 7px;
     color: @color7;
-    padding: 0.3rem;
+    padding: 3px;
 }
 
 #tray menu menuitem:hover {
   background: @color15;
-  color: @background;
-	border-radius: 0.35em;
+  color: @color0;
+	border-radius: 3.5px;
 }
 
 
 /* ============ Power Profiles ============ */
 #power-profiles-daemon {
-  padding-right: 1rem;
+  padding-right: 12px;
+  font-size: 20px ;
 }
 
 #power-profiles-daemon.performance {
-  background-color: @color1;
-  color: @color15;
+  
+  color: @color10;
 }
 
 #power-profiles-daemon.balanced {
-  background-color: @color6;
+  
   color: @color15;
 }
 
 #power-profiles-daemon.power-saver {
-  background-color: @cursor;
-  color: @background;
+  
+  color: @color10;
 }
 
 /* ============ Battery ============ */
@@ -206,10 +208,10 @@ menu {
 
 /* ============ Custom Power Button ============ */
 #custom-power {
-  padding: 0em 0.6em 0em 0em;
+  padding: 0px 17px 0px 0px;
   color: @color13;
 
-  font-size: 1.5em;
+  font-size: 20px;
 }
 
 /*
