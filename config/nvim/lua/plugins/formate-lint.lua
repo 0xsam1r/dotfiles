@@ -38,6 +38,7 @@ return {
 					go = { "gofumpt" },
 					sql = { lsp_format = "prefer" },
 					mysql = { lsp_format = "prefer" },
+					python = { "ruff_format" },
 				},
 
 				default_format_opts = {
@@ -90,6 +91,7 @@ return {
 				bash = { "shellcheck" },
 				dockerfile = { "hadolint" },
 				lua = { "luacheck" },
+				python = { "ruff" },
 			}
 
 			vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {

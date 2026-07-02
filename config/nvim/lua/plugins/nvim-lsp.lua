@@ -1,6 +1,6 @@
 -- ============================================================================
 --  LSP Configuration
---  Stack: TS/JS, C++, Go, CSS, Lua, JSON/JSONC, SQL, Bash, Docker
+--  Stack: TS/JS, C++, Go, CSS, Lua, JSON/JSONC, SQL, Bash, Docker, Python
 --  Plugins: mason + mason-lspconfig + nvim-lspconfig + blink.cmp + fidget + lsp_singnature + schemastore + mason-tool-installer 
 -- =============================================================================
 
@@ -258,6 +258,19 @@ return {
         -- ── Markdown ─────────────────────────────────────────────────────────
         marksman = {},
 
+        -- ── Python ───────────────────────────────────────────────────────────
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                typeCheckingMode = "basic",  -- "off" | "basic" | "strict"
+                autoSearchPaths  = true,
+                useLibraryCodeForTypes = true,
+              },
+            },
+          },
+        },
+ 
       }
 
       -- ── Apply capabilities and register each server ───────────────────────
@@ -283,6 +296,8 @@ return {
         "eslint_d",     -- JS/TS linting daemon
         "shellcheck",   -- Bash static analysis
         "hadolint",     -- Dockerfile linting
+        -- Python
+        "ruff",         -- formatter + linter (fast, rust-based)
       })
       require("mason-tool-installer").setup {
         ensure_installed = ensure_installed,

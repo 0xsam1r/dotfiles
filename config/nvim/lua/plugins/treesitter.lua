@@ -11,7 +11,7 @@ return {
     },
     opts = {
         ensure_installed = {
-            "bash", "c", "diff", "html", "lua", "luadoc", "markdown", "markdown_inline", "query", "vim", "vimdoc", "javascript", "typescript", 'regex', "php", "kdl", "java", "css", "sql", "json", "flutter", "shell", "markdown"
+            "bash", "c", "diff", "html", "lua", "luadoc", "markdown", "markdown_inline", "query", "vim", "vimdoc", "javascript", "typescript", 'regex', "php", "kdl", "java", "css", "sql", "json", "flutter", "shell", "markdown", "python"
         },
         -- Autoinstall languages that are not installed
         auto_install = true,
