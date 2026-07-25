@@ -39,6 +39,7 @@ return {
 					sql = { lsp_format = "prefer" },
 					mysql = { lsp_format = "prefer" },
 					python = { "ruff_format" },
+					dart = { "dart_format" }
 				},
 
 				default_format_opts = {
