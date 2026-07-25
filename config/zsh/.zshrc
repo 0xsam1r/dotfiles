@@ -86,6 +86,12 @@ alias lt='eza --icons=auto --tree' # list folder as tree
 alias start= 'hyprctl dispatch exec'
 
 
+#================== VAR ====================
+export ANDROID_HOME=/opt/android-sdk
+export ANDROID_SDK_ROOT=/opt/android-sdk
+export PATH=$PATH:/opt/android-sdk/platform-tools
+export PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin
+
 # Shell integrations
 eval "$(fzf --zsh)" # ctrl + r open a search in history using fzf
 eval "$(zoxide init --cmd cd zsh)"
